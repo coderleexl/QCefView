@@ -76,6 +76,8 @@ if(OS_WINDOWS)
     COMMAND ${CMAKE_COMMAND}
     -E echo "/* Auto Build Trigger */" > "${CMAKE_BINARY_DIR}/auto_rebuild.cpp"
   )
+  remove_definitions (-DNTDDI_VERSION)
+  add_definitions(-DNTDDI_VERSION=NTDDI_WIN10)
 endif() # OS_WINDOWS
 
 if(OS_LINUX)

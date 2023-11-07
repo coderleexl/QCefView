@@ -117,6 +117,9 @@ if(OS_WINDOWS)
     --no-compiler-runtime
     $<TARGET_FILE:${PROJECT_NAME}>
   )
+  
+  remove_definitions (-DNTDDI_VERSION)
+  add_definitions(-DNTDDI_VERSION=NTDDI_WIN10)
 endif() # OS_WINDOWS
 
 if(OS_LINUX)

@@ -107,6 +107,8 @@ else()
     "$<$<CONFIG:DEBUG>:-O0>"
     "$<$<CONFIG:RELEASE>:-O3>"
   )
+  remove_definitions (-DNTDDI_VERSION)
+  add_definitions(-DNTDDI_VERSION=NTDDI_WIN10)
 endif()
 
 if(NOT QCefView_HAS_PARENT_DIRECTORY)
